@@ -1,16 +1,36 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+password = ""
+encoded_password = ""
+def menu():
+    print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+#adds 3 to each digit and concatenates it back into a string and saves the variable globally
+def encode():
+    global password
+    global encoded_password
+    password = (input("Please enter your password to encode:"))
+    print("Your password has been encoded and stored!")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    for digit in password:
+        encoded_digit = (int(digit) + 3) % 10
+        encoded_password += str(encoded_digit)
+    return encoded_password
+
+#prints both the encoded password and the original password
+
+
+
+if __name__ == "__main__":
+    while True:
+        menu()
+        user_input = input("Please enter an option:")
+
+#each menu item and appropriate function below
+        if user_input == "1":
+            encode()
+        if user_input == "2":
+            decode(password)
+        if user_input == "3":
+            quit()
+
+

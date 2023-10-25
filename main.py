@@ -18,8 +18,6 @@ def encode():
 
 #prints both the encoded password and the original password
 
-
-
 if __name__ == "__main__":
     while True:
         menu()
@@ -29,7 +27,7 @@ if __name__ == "__main__":
         if user_input == "1":
             encode()
         if user_input == "2":
-            decode(password)
+            print("The encoded password is", encoded_password, "and the original password is", password)
         if user_input == "3":
             quit()
 
